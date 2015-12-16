@@ -1,0 +1,1 @@
+var climaAngular = angular.module("ClimaAngular",[]);

@@ -1,0 +1,12 @@
+#conteinerWeather{
+	border-radius: 50px;
+	opacity: 0.7;
+}
+
+#conteinerForecast{
+	padding-left: 50px;
+}
+
+#widget{
+	border: 1px solid black;
+}
