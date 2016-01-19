@@ -1,0 +1,35 @@
+<div  ng-repeat="city in cities">
+<div class="col l6 m6 s12" id="widget" ng-style="{'background-image':'url(./images/{{city.data.query.results.channel.item.condition.code}}.jpg)'}">
+	<div class="card" id="conteinerWeather">
+		<div class="card-content">
+			<h5 class="grey-text text-darken-2">{{city.data.query.results.channel.location.city}} , {{city.data.query.results.channel.location.country}}<button id="closebutton" class="right waves-effect waves-teal btn-flat" ng-click="removeCity(city.data.query.results.channel.description)"><i class="tiny material-icons">settings_power</i></button></h5>
+			<p class="grey-text text-darken-2">{{city.data.query.results.channel.item.condition.date}}</p>
+			<p class="grey-text text-darken-2">{{city.data.query.results.channel.item.condition.text}}</p>
+			<div class="row valign-wrapper">
+				<div class="col l2 m2 s3">
+					<img ng-src="http://l.yimg.com/a/i/us/we/52/{{city.data.query.results.channel.item.condition.code}}.gif">
+				</div>
+				<div class="col l3 m3 s3">
+					<h1 class="valign">{{city.data.query.results.channel.item.condition.temp}}<sup><font size="6">°{{city.data.query.results.channel.units.temperature}}</font></sup></h1>
+				</div>
+				<div class="col l7 m7 s6">
+					<div class="valign">
+						<p class="grey-text text-darken-2">Pressure: {{city.data.query.results.channel.atmosphere.pressure}}{{city.data.query.results.channel.units.pressure}}</p>
+						<p class="grey-text text-darken-2">Humidity: {{city.data.query.results.channel.atmosphere.humidity}}%</p>
+						<p class="grey-text text-darken-2">Wind: {{city.data.query.results.channel.wind.speed}}{{city.data.query.results.channel.units.speed}} {{city.data.query.results.channel.wind.direction}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="conteinerForecast">
+			<div ng-repeat="forecast in city.data.query.results.channel.item.forecast" class="col l2 m2 s2">
+				<div class="card">
+					<p class="grey-text text-darken-2">{{forecast.day}}</p>
+					<img ng-src="http://l.yimg.com/a/i/us/we/52/{{forecast.code}}.gif">
+					<p class="grey-text text-darken-2">{{forecast.low}}° {{forecast.high}}°</p>
+				</div>
+			</div>
+		</div>    
+	</div>
+</div>
+</div>
